@@ -1,0 +1,18 @@
+
+.padreHome{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: gray;
+}
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+    height: 470px;
+}

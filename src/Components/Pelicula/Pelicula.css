@@ -1,0 +1,38 @@
+.padrePelicula{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background-color: gray;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    height: 100vh;
+}
+
+.pelicula{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background-color: gray;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.titulo{
+    font-size: 30px;
+    font-weight: bold;
+    margin: 10px;
+}
+.fecha{
+    font-weight: bold;
+    margin: 10px;
+}
+.descripcion{
+    font-size: 20px;
+    margin:10px;
+
+}
+.nota{
+    font-weight: bold;
+    margin: 10px;
+}
