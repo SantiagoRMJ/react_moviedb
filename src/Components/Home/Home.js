@@ -12,8 +12,15 @@ import axios from 'axios'
         }
         }
         pasaPagina = ()=>{
-                this.setState(prevState => ({page: prevState.page + 1}))            
+                this.setState(prevState => ({page: prevState.page + 1}), ()=>{
+                    this.componentDidMount(this.state.page)  
+                })          
         }
+        atras = ()=>{
+            this.setState(prevState => ({page: prevState.page - 1}), ()=>{
+                this.componentDidMount(this.state.page)  
+            })          
+    }
         async componentDidMount(){
             try {
                 const allMovies = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=b5138e06a3a9125b8c326498bbeae997&language=es-ES&page=${this.state.page}`)
@@ -50,6 +57,7 @@ import axios from 'axios'
         return (
              <div> 
                  <div className="padreHome" >{this.muestraPeliculas()}</div>
+                 <button onClick={()=> this.atras()}>ATRAS</button>
                 <button onClick={()=> this.pasaPagina()}>SIGUIENTE</button>
              </div>
              )
