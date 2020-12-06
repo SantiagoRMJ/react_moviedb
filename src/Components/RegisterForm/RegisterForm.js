@@ -5,7 +5,7 @@ import { Input } from 'antd';
 import axios from 'axios'
 import {useHistory} from 'react-router-dom'
 import './RegisterForm.scss'
-const URL = "http://moviedb-mongo.herokuapp.com/user"
+const URL = "https://moviedb-mongo.herokuapp.com/user"
 
 const RegisterForm = () => {
     const history = useHistory()
