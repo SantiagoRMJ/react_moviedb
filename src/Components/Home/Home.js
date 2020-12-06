@@ -55,10 +55,14 @@ import axios from 'axios'
         }
     render() {
         return (
-             <div> 
-                 <div className="padreHome" >{this.muestraPeliculas()}</div>
+             <div className="padreButtons"> 
+                 <input type="text"placeholder="Buscar" ></input>
                  <button onClick={()=> this.atras()}>ATRAS</button>
-                <button onClick={()=> this.pasaPagina()}>SIGUIENTE</button>
+                 <button onClick={()=> this.pasaPagina()}>SIGUIENTE</button>
+                 <div className="padreHome" >{this.muestraPeliculas()}</div>
+                 <input type="text" placeholder="Buscar"></input>
+                 <button onClick={()=> this.atras()}>ATRAS</button>
+        <button onClick={()=> this.pasaPagina()}>SIGUIENTE</button>
              </div>
              )
     }
