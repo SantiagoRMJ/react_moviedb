@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Link} from 'react-router-dom'
 import './Home.css'
 import axios from 'axios'
 
@@ -56,13 +57,16 @@ import axios from 'axios'
     render() {
         return (
              <div className="padreButtons"> 
+                 <h1 className="titulo">Movie-foo</h1>
                  <input type="text"placeholder="Buscar" ></input>
+                 <Link classname="link" to="/registro">Registratee</Link>
+                 <Link classname="link" to="/login">LOGUEATE</Link>
                  <button onClick={()=> this.atras()}>ATRAS</button>
                  <button onClick={()=> this.pasaPagina()}>SIGUIENTE</button>
                  <div className="padreHome" >{this.muestraPeliculas()}</div>
                  <input type="text" placeholder="Buscar"></input>
                  <button onClick={()=> this.atras()}>ATRAS</button>
-        <button onClick={()=> this.pasaPagina()}>SIGUIENTE</button>
+                 <button onClick={()=> this.pasaPagina()}>SIGUIENTE</button>
              </div>
              )
     }
