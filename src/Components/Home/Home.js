@@ -59,8 +59,8 @@ import axios from 'axios'
              <div className="padreButtons"> 
                  <h1 className="titulo">Movie-foo</h1>
                  <input type="text"placeholder="Buscar" ></input>
-                 <Link classname="link" to="/registro">Registratee</Link>
-                 <Link classname="link" to="/login">LOGUEATE</Link>
+                 <Link className="link" to="/registro">Registratee</Link>
+                 <Link className="link" to="/login">LOGUEATE</Link>
                  <button onClick={()=> this.atras()}>ATRAS</button>
                  <button onClick={()=> this.pasaPagina()}>SIGUIENTE</button>
                  <div className="padreHome" >{this.muestraPeliculas()}</div>

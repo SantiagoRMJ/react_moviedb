@@ -4,6 +4,7 @@ import { Input } from 'antd';
 import './Login.scss'
 import { useHistory } from 'react-router-dom';
 import {notification} from 'antd'
+import jwt_decode from "jwt-decode";
 
 
 
@@ -17,8 +18,9 @@ const LoginForm = () => {
         try {
             e.preventDefault();
             const post = await axios.post(URL, {name,email,pass})
-            localStorage.setItem('token',post.data.token)
-            console.log(post)
+            const user = jwt_decode(post.data.token)
+            localStorage.setItem('token', user)
+            console.log(user)
             notification['success']({
                 message: "Login correcto!"
             })
