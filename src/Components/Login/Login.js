@@ -19,7 +19,7 @@ const LoginForm = () => {
             e.preventDefault();
             const post = await axios.post(URL, {name,email,pass})
             const user = jwt_decode(post.data.token)
-            localStorage.setItem('token', user)
+            localStorage.setItem('token', JSON.stringify(user))
             console.log(user)
             notification['success']({
                 message: "Login correcto!"
