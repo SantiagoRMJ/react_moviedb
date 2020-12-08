@@ -24,6 +24,7 @@ export default class Pelicula extends Component {
                 "user_id": token.id,
                 "pelicula": data.id 
             }
+            if(!token) this.goBack()
             await Axios.post(URL, pedido)
             console.log(pedido)
             notification['success']({
