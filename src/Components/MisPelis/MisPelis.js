@@ -21,7 +21,6 @@ import axios from 'axios'
                 console.log(err)
             }
         }   
-    //<div className="padreHome" >{this.muestraPeliculas()}</div>
     goBack(){
         this.props.history.push('/')
     }
