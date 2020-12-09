@@ -36,7 +36,6 @@ import axios from 'axios'
             if(this.state.peliculas[0]){
                 return(
                     this.state.peliculas.map(pelicula => {
-                        console.log(pelicula.title)
                         return(
                             <div className="home" key={pelicula.id}>
                                 {pelicula.title}
@@ -59,6 +58,7 @@ import axios from 'axios'
              <div className="padreButtons"> 
                  <h1 className="titulo">Movie-foo</h1>
                  <input type="text"placeholder="Buscar" ></input>
+                 <Link className="link" to="/mispelis">Mis peliculas</Link>
                  <Link className="link" to="/registro">Registratee</Link>
                  <Link className="link" to="/login">LOGUEATE</Link>
                  <button onClick={()=> this.atras()}>ATRAS</button>
