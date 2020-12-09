@@ -9,7 +9,9 @@ import axios from 'axios'
 
         this.state = {
             peliculas: [],
-            page: 1
+            page: 1,
+            busqueda: [],
+            valorBusqueda: ""
         }
         }
         pasaPagina = ()=>{
@@ -31,7 +33,22 @@ import axios from 'axios'
                 console.log(err)
             }
         }   
-
+        muestraBusqueda(){
+            if(this.state.busqueda[0]){
+                return(
+                    this.state.busqueda.map(pelicula => {
+                        return(
+                            <div className="home" key={pelicula.id}>
+                                {pelicula.title}
+                                <img alt={pelicula.title} src={`https://image.tmdb.org/t/p/w300${pelicula.poster_path}`} onClick={()=>this.clickElementoSeleccionado(pelicula)}></img>
+                            </div>
+                        
+                        )
+                    }))         
+            }else{
+                return(<div>CARGANDO LOS DATOS.</div>)
+            }   
+        }
         muestraPeliculas(){
             if(this.state.peliculas[0]){
                 return(
@@ -53,11 +70,18 @@ import axios from 'axios'
             this.props.history.push('/pelicula');
             localStorage.setItem('datosPelicula', JSON.stringify(pelicula));
         }
+        buscador(e){
+            this.setState({valorBusqueda: e.target.value}, ()=> {
+                const data = this.state.peliculas.filter(item => item.title.toLowerCase().includes(this.state.valorBusqueda.toLowerCase()))
+                this.setState({busqueda: data})
+            })
+        }
+
     render() {
         return (
              <div className="padreButtons"> 
                  <h1 className="titulo">Movie-foo</h1>
-                 <input type="text"placeholder="Buscar" ></input>
+                 <input className="perico "type="text"placeholder="Buscar" onChange={e => this.buscador(e)} ></input>
                  <Link className="link" to="/mispelis">Mis peliculas</Link>
                  <Link className="link" to="/registro">Registratee</Link>
                  <Link className="link" to="/login">LOGUEATE</Link>
